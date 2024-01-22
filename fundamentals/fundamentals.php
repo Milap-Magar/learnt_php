@@ -16,7 +16,7 @@
 		?>
       </section>
       <footer>   
-         <small> <a href="../index.html">Home</a></small>
+         <small> <a href="../WatIndex.html">Home</a></small>
       </footer>
    </body>
 </html>
@@ -210,6 +210,8 @@
     //Adding heading named as Loops
     echo "<h3>Loops</h3>";
 
+
+
     //Adding sub-heading named as While Loop
     echo "<h4>While Loop</h4>";
 
@@ -219,6 +221,8 @@
         echo 'Count: '.$counter.'<br />';
         $counter++; 
     }
+
+    
 
 
     //While loop to calculate how much a multiple number of t-shirts
@@ -264,9 +268,10 @@
    
    foreach($city as $key => $value){
         $value = ucfirst(strtolower($value));
-        $city = array($key => $value);
-        print_r($city);
+        $city[$key]=$value;
+
    }
+   print_r($city);
    
 
 

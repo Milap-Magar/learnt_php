@@ -11,29 +11,8 @@
    </head>
    <body>
         <h1>Processing Input from HTML Forms</h1>
-        <h2>Login Form Using GET</h2>
-        <form method="GET" action="forms.php"> 
-            <fieldset>
-                <legend>Login</legend>
-                 <label for="email">Email: </label>
-                <input type="text" name="txtEmail"/><br />
-                <label for="passwd">Password: </label>
-                <input type="password" name="txtPass" /><br />
-                <input type="submit" value="Submit" name="loginSubmit" />
-                <input type="reset" value="Clear" />
-            </fieldset>
-        </form>
-            
-        <?php 
-        //Retreiving data using GET method
-        if(isset($_POST['loginSubmit'])){
-            @$email = $_GET['txtEmail'];
-            @$password = $_GET['txtPass'];
-
-            echo "<br/>Email : " .$email. " Password : " .$password;
-        }
-        ?>
-
+        
+    
         <h2>Login Form Using POST</h2>
         <form method="POST" action="forms.php"> 
             <fieldset>
