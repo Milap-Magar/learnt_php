@@ -11,7 +11,7 @@
             justify-content: center;
         }
         #tabular {
-            width: 600px;
+            width: 100%;
             height: 200px;
             border-spacing: 0px;
         }
@@ -35,10 +35,13 @@
     //     [4,'hero2', 15, 80, 90, 70, 75,'3rd']
     // ];
     $students = [
-        ['Name' => 'milap', 'rollno' => 10, 'OS' => 40, 'Numerical' => 55, 'Software' => 65, 'DBMS' => 65, 'SL' => 80],
+        ['Name' => 'milap', 'rollno' => 10, 'OS' => 99, 'Numerical' => 95, 'Software' => 99, 'DBMS' => 90, 'SL' => 90],
         ['Name' => 'ram', 'rollno' => 11, 'OS' => 30, 'Numerical' => 55, 'Software' => 75, 'DBMS' => 55, 'SL' => 65],
-        ['Name' => 'sita', 'rollno' => 12, 'OS' => 70, 'Numerical' => 55, 'Software' => 85, 'DBMS' => 55, 'SL' => 70],
-        ['Name' => 'krishna', 'rollno' => 13, 'OS' => 30, 'Numerical' => 55, 'Software' => 65, 'DBMS' => 45, 'SL' => 60]
+        ['Name' => 'geeta', 'rollno' => 13, 'OS' => 60, 'Numerical' => 45, 'Software' => 45, 'DBMS' => 45, 'SL' => 50],
+        ['Name' => 'hari', 'rollno' => 14, 'OS' => 75, 'Numerical' => 65, 'Software' => 55, 'DBMS' => 55, 'SL' => 60],
+        ['Name' => 'shyama', 'rollno' => 15, 'OS' => 40, 'Numerical' => 85, 'Software' => 45, 'DBMS' => 65, 'SL' => 70],
+        ['Name' => 'sita', 'rollno' => 12, 'OS' => 70, 'Numerical' => 85, 'Software' => 35, 'DBMS' => 85, 'SL' => 80],
+        ['Name' => 'krishna', 'rollno' => 16, 'OS' => 40, 'Numerical' => 55, 'Software' => 45, 'DBMS' => 45, 'SL' => 60]
     ];
     // echo 'pre';
     // print_r($students);
@@ -55,9 +58,10 @@
                     <th>Software Engineering</th>
                     <th>DBMS</th>
                     <th>Scripting</th>
+                    <th>Total</th>
                     <th>Result</th>
-                    <!-- <th>Percentage</th> -->
-                    <!-- <th>Division</th> -->
+                    <th>Division</th>
+                    <th>Percentage</th>
                 </tr>
             </thead>
             <tbody>
@@ -66,11 +70,30 @@
                         $result = 'Pass';
                         if($student['DBMS'] < 40 || $student['OS'] < 40 || $student['Software'] < 40 || $student['SL'] < 40 || $student['Numerical'] < 40 ){
                              $result = "Fail";
+                             $color = "style=\"background-color: red;\"";
+                             $division = "-";
+                             $percentage = "-";
                         }else{
                              $result = "Pass";
+                             $color = "style=\"background-color: cyan;\"";
+                             //TOTALING
+                             $total = $student['DBMS'] + $student['OS'] + $student['SL'] + $student['Numerical'] + $student['Software'];
+                             if($total > 450){
+                                $division = "Distinction";
+                             }else if($total > 400){
+                                $division = "First Division";
+                             }else if($total > 350){
+                                $division = "Second Division";
+                             }else if($total > 300){
+                                $division = "Third Division";
+                             }else{
+                                $division = "JUST PASSED";
+                             }
+                            //  PERCENTAGE
+                            $percentage = $total / 500 * 100  . "%";
                         }
                     ?>
-                    <tr id="table_row">
+                    <tr id="table_row" <?php  echo $color ?> >
                         <td>
                             <?php echo $key + 1 ?>
                         </td>
@@ -96,7 +119,16 @@
                             <?php echo $student['SL'] ?>
                         </td>
                         <td>
+                            <?php echo $total ?>
+                        </td>
+                        <td>
                             <?php echo $result ?>
+                        </td>
+                        <td>
+                            <?php echo $division ?>
+                        </td>
+                        <td>
+                            <?php echo $percentage ?>
                         </td>
                     </tr>
                 <?php } ?>
