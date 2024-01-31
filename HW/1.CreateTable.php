@@ -14,6 +14,7 @@ try {
             echo "<br />";
             echo "Table Creation success";
         } else {
+            echo "<br />";
             echo "table creation failed";
         }
     }
