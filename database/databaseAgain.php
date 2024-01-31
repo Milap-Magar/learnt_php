@@ -21,11 +21,6 @@ try {
     die("Exception:" . $e->getMessage());
 }
 
-// DB CREATE 
-// TABLE CREATE
-// 
-// 
-
 // mysqli_query()
 // obj, assoc, row, array
 ?>
