@@ -39,7 +39,7 @@ if (isset($_POST['btnSave'])) {
 
     if (count($error) == 0) {
         try {
-            $connection = mysqli_connect('localhost', 'root', '', 'db_20_jeewan_lab');
+            $connection = mysqli_connect('localhost', 'root', '', 'db_23_milap_lab');
             $sql = "INSERT INTO tbl_students_20 (name, email, phone, program, semester) VALUES ('$name','$email','$phone','$program','$semester')";
             if (mysqli_query($connection, $sql)) {
                 echo 'Profile Added!';
