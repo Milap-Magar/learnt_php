@@ -40,6 +40,7 @@ if (isset($_POST["btnSave"])) {
         .main{
             display: flex;
             flex-direction: column;
+            gap: 10px;
         }
         button{
             width: 75px;
