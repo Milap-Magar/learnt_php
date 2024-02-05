@@ -1,0 +1,76 @@
+Blog System
+- User type
+    Admin
+    User/Guest
+- Admin Do
+    - Login
+    - Add another Admin
+    - Blog category management
+    - Blog management
+    - View Comments
+User
+    - Register
+    - Login
+    - Read Blog
+    - Comment Blog
+
+admins
+
+id
+name
+email
+username
+password
+status
+
+
+Users
+
+id
+name
+email
+phone
+address
+website
+profile_image
+username
+password
+status
+created_at
+last_login_at
+
+
+categories
+
+id
+title
+rank
+status
+created_at
+updated_at
+created_by
+updated_by
+
+blogs
+
+id
+category_id
+title
+description
+short_description
+feature_image
+view_count
+status
+created_at
+updated_at
+created_by
+updated_by
+
+Comments
+
+id
+blog_id
+commented_by
+commented_at
+comment
+status
