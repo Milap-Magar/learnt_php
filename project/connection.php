@@ -3,9 +3,9 @@ $server = "localhost";
 $username = "root";
 $password = "";
 $dbname = "blog";
-
-$conn = mysqli_connect($server, $username, $password, $dbname);
-if (!$conn) {
-  die('Failed: ' . mysqli_connect_error());
+try {
+  $conn = mysqli_connect($server, $username, $password, $dbname);
+} catch (Exception $e) {
+  die('Ex : ' . $e->getMessage());
 }
 ?>

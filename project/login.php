@@ -1,6 +1,6 @@
 <?php
-include("connection.php");
 
+require("./connection.php");
 if (isset($_COOKIE['username'])) {
     session_start();
     $_SESSION['username'] = $_COOKIE['username'];
@@ -25,7 +25,6 @@ if (isset($_POST['btnLogin'])) {
     } else {
         $error['password'] = 'Password Required!';
     }
-
     if (sizeof($error) == 0) {
 
         $userlist = [];
@@ -40,14 +39,13 @@ if (isset($_POST['btnLogin'])) {
         }
         $login = false;
         foreach ($userlist as $key => $user) {
-            if ($user['username'] == $username && $user['password'] == $password) {
+            if ($user['Username'] == $username && $user['password'] == $password) {
                 $login = true;
                 break;
             }
         }
         if ($login) {
             session_start();
-
             $_SESSION['username'] = $username;
             $_SESSION['login_time'] = time();
 
