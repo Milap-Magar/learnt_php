@@ -1,15 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script>
-      let root = document.getElementById("root");
-      root.textContent = "Text has been changed!";
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Continuous Running Clock</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      margin-top: 100px;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="clock"></div>
+
+  <script>
+    function updateClock() {
+      const now = new Date();
+      const year = now.getFullYear();
+      const month = String(now.getMonth() + 1).padStart(2, '0');
+      const day = String(now.getDate()).padStart(2, '0');
+      const hours = String(now.getHours() % 12 || 12).padStart(2, '0');
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      const seconds = String(now.getSeconds()).padStart(2, '0');
+      const period = now.getHours() < 12 ? 'AM' : 'PM';
+
+      const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+      const dayOfWeek = daysOfWeek[now.getDay()];
+
+      const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds} ${period} ${dayOfWeek}`;
+
+      document.getElementById('clock').textContent = formattedDate;
+    }
+
+    // Initial call to set the clock when the page loads
+    updateClock();
+
+    // Update the clock every second
+    setInterval(updateClock, 1000);
+  </script>
+
+</body>
 </html>

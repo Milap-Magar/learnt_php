@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation Example</title>
+  <style>
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="container">
+    <h2>DOM Manipulation Example</h2>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeItem()">Remove Last Item</button>
+    <button onclick="highlightItems()">Highlight Items</button>
+  </div>
+
+  <script>
+    function addItem() {
+      // Create a new list item
+      const newItem = document.createElement('li');
+      newItem.textContent = 'New Item';
+
+      // Append the new item to the existing list
+      document.getElementById('list').appendChild(newItem);
+    }
+
+    function removeItem() {
+      // Get the list
+      const list = document.getElementById('list');
+
+      // Check if there are items to remove
+      if (list.children.length > 0) {
+        // Remove the last item
+        list.removeChild(list.lastChild);
+      }
+    }
+
+    function highlightItems() {
+      // Get all list items
+      const items = document.querySelectorAll('#list li');
+
+      // Toggle the 'highlight' class for each item
+      items.forEach(item => {
+        item.classList.toggle('highlight');
+      });
+    }
+  </script>
+
+</body>
+</html>
