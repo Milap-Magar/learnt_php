@@ -47,7 +47,6 @@ class Car
         $this->model = $model;
     }
 }
-
 $carObject = new Car("Toyota", "Camry");
 echo "Object: ";
 var_dump($carObject);
