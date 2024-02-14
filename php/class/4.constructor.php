@@ -40,7 +40,7 @@ class Student extends Person{
 }
 
 
-$nabin = new Student('Nabin',21,985454,'KTM',45,'BCA','info@nabin.com','');
+$ram = new Student('ram',21,985454,'KTM',45,'BCA','info@ram.com','');
 
-$nabin->printData();
+$ram->printData();
 ?>
