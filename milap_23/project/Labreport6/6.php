@@ -14,3 +14,4 @@ print_r($list);
 echo '<br />Descending Sort by Key <br />';
 krsort($list);
 print_r($list);
+?>
