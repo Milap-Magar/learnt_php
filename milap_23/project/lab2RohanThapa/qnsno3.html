@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      console.log("Value of PI:", Math.PI);
+
+      console.log("Square root of 15:", Math.sqrt(15));
+
+      console.log("Absolute value of -20:", Math.abs(-20));
+
+      console.log("Maximum of 2, 5 and 6:", Math.max(2, 5, 6));
+
+      console.log("Minimum of 2, 4,8 and 1:", Math.min(2, 4, 8, 1));
+
+      console.log("Rounded value of 3.145:", Math.round(3.145));
+
+      console.log("Random value between 0 and 1:", Math.random());
+
+      function getRandomInt(min, max) {
+        return Math.floor(Math.random() * (max - min)) + min;
+      }
+
+      var randomInt = getRandomInt(1, 100);
+      console.log("Random integer between 1 and 100:", randomInt);
+    </script>
+  </body>
+</html>

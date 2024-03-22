@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = parseInt(prompt("Enter first number"));
+      let num2 = parseInt(prompt("Enter second number"));
+      let operator = prompt("Enter operator");
+
+      switch (operator) {
+        case "+":
+          alert(num1 + num2);
+          break;
+
+        case "-":
+          alert(num1 - num2);
+          break;
+        case "/":
+          alert(num1 / num2);
+          break;
+        case "*":
+          alert(num1 * num2);
+          break;
+        case "%":
+          alert(num1 % num2);
+          break;
+        default:
+          alert("Enter valid operator");
+      }
+    </script>
+  </body>
+</html>

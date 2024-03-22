@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>DOM Manipulation Example</h1>
+
+    <div id="container">
+      <p>This is a paragraph.</p>
+      <button id="addButton">Add New Paragraph</button>
+      <button id="removeButton">Remove Paragraph</button>
+      <button id="modifyButton">Modify Paragraph</button>
+    </div>
+    <script>
+      let container = document.getElementById("container");
+      function addParagraph() {
+        let paragraph = document.createElement("p");
+        paragraph.textContent = "New paragraph added!";
+        container.appendChild(paragraph);
+      }
+
+      function removeParagraph() {
+        let paragraphs = container.getElementsByTagName("p");
+        if (paragraphs.length > 0) {
+          let lastParagraph = paragraphs[paragraphs.length - 1];
+          container.removeChild(lastParagraph);
+        } else {
+          alert("No paragraph to remove!");
+        }
+      }
+
+      function modifyParagraph() {
+        let paragraphs = container.getElementsByTagName("p");
+        if (paragraphs.length > 0) {
+          let firstParagraph = paragraphs[0];
+          firstParagraph.textContent = "First paragraph modified!";
+        } else {
+          alert("No paragraph to modify!");
+        }
+      }
+
+      document
+        .getElementById("addButton")
+        .addEventListener("click", addParagraph);
+
+      document
+        .getElementById("removeButton")
+        .addEventListener("click", removeParagraph);
+
+      document
+        .getElementById("modifyButton")
+        .addEventListener("click", modifyParagraph);
+    </script>
+  </body>
+</html>
